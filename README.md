@@ -1,13 +1,3 @@
----
-
-## README para o Projeto `haxhost` (Servidor de Salas HaxBall)
-
-**Nome do Arquivo na EC2 Haxhost:** `/home/ubuntu/haxhost/README.md`
-**Repositório GitHub:** `git@github.com:gustavobbrz/haxhost.git`
-
-**Conteúdo para `README.md`:**
-
-```markdown
 # HaxHost - Servidor para Salas HaxBall Headless
 
 Este projeto é executado em um servidor (como uma EC2 da AWS) para hospedar instâncias de salas HaxBall headless. É projetado para ser controlado por um sistema externo (como um bot do Discord) que dispara a criação de salas.
@@ -63,3 +53,18 @@ Execute o script `createRoom.sh` com os argumentos necessários:
 
 ```bash
 ./createRoom.sh "Nome da Sala Exemplo" "senhaAdminExemplo" "thr1.TOKEN_EXEMPLO_DE_HAXBALL.xxxxxxxxxx"
+
+O script deve retornar o link da sala se tudo ocorrer bem.
+
+Estrutura do Projeto
+sala.js: Contém a lógica principal para criar e gerenciar uma instância de sala HaxBall.
+createRoom.sh: Script shell para facilitar a execução de sala.js, gerenciamento de logs e retorno de status/link.
+package.json / package-lock.json: Definição do projeto Node.js e suas dependências.
+logs/: Diretório onde os logs de cada sala são armazenados (ignorado pelo Git).
+node_modules/: Diretório das dependências do Node.js (ignorado pelo Git).
+Notas
+Este projeto é destinado a ser executado em um ambiente de servidor.
+A segurança dos tokens HaxBall e senhas de admin é responsabilidade do sistema que chama o createRoom.sh.
+O sala.js inclui um temporizador para fechar a sala automaticamente após um período configurado.
+<!-- end list -->
+
