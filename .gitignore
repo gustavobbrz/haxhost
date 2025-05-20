@@ -1,0 +1,15 @@
+# Dependências
+node_modules/
+
+# Logs
+logs/
+sala_js_output_*.log
+*.log
+
+# Arquivos de ambiente (se usar)
+.env
+.env.*
+
+# Chaves privadas (precaução)
+*.pem
+
